@@ -11,13 +11,10 @@ import tech.getarrays.employeemanager.repo.EmployeeRepo;
 
 @Component
 public class EmployeeService {
-	private final EmployeeRepo employeeRepo;
 	
 	@Autowired
-	public EmployeeService(EmployeeRepo employeeRepo) {
-		this.employeeRepo = employeeRepo;
-	}
-	
+	private EmployeeRepo employeeRepo;
+		
 	public Employee addEmployee(Employee employee) {
 		employee.setEmployeeCode(UUID.randomUUID().toString());
 		return employeeRepo.save(employee);

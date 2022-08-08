@@ -22,11 +22,7 @@ import tech.getarrays.employeemanager.service.EmployeeService;
 public class EmployeeResource {
 	
 	@Autowired
-	private final EmployeeService employeeService;
-	
-	public EmployeeResource(EmployeeService employeeService) {
-		this.employeeService = employeeService;
-	}
+	private EmployeeService employeeService;
 	
 	@GetMapping("/all")
 	public ResponseEntity<List<Employee>> getAllEmployees () {
